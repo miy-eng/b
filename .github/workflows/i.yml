@@ -1,0 +1,24 @@
+name: Echo Job on Push
+
+# このワークフローを特定のブランチへのプッシュイベントでトリガーします。
+on:
+  push:
+    branches:
+      - c  # 特定のブランチ名に変更する
+
+jobs:
+  echo-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Echo a message
+        run: echo "Hello, this is a first test message!"
+      - name: Echo repository name
+        run: |
+          echo "Repository: ${{ github.repository }}"
+      - name: Echo branch name
+        run: |
+          echo "Branch: ${{ github.ref }}"
+      - name: Echo organization name
+        run: |
+          echo "Organization: ${{ github.repository_owner }}"
