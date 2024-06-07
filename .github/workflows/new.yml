@@ -9,10 +9,9 @@ on:
 jobs:
   echo-job:
     runs-on: ubuntu-latest
+    env:
+      handson-env: You can do it!!
 
     steps:
-    - name: Set handson-env environment variable
-      run: echo "handson-env=Hello, GitHub Actions!" >> $GITHUB_ENV
-
     - name: Echo handson-env
-      run: echo $handson-env
+      run: echo "handson-env is $handson-env"
