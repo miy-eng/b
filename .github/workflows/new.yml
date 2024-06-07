@@ -1,0 +1,18 @@
+name: Echo handson-env
+
+# このワークフローを特定のブランチへのプッシュイベントでトリガーします。
+on:
+    push:
+      branches:
+        - main  # 特定のブランチ名に変更する
+
+jobs:
+  echo-job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set handson-env environment variable
+      run: echo "handson-env=Hello, GitHub Actions!" >> $GITHUB_ENV
+
+    - name: Echo handson-env
+      run: echo $handson-env
