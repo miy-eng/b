@@ -13,5 +13,5 @@ jobs:
       handson-env: You can do it!!
 
     steps:
-    - name: Echo handson-env
-      run: echo "handson-env is $handson-env"
+    - name: Echo handson_env
+      run: echo "handson_env is $handson_env"
